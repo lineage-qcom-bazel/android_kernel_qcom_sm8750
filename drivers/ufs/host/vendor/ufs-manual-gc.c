@@ -52,13 +52,6 @@ static int manual_gc_enable(struct ufs_hba *hba, u32 *value)
 	return ret;
 }
 
-static u8 ufshcd_wb_get_query_index(struct ufs_hba *hba)
-{
-        if (hba->dev_info.wb_buffer_type == WB_BUF_MODE_LU_DEDICATED)
-                return hba->dev_info.wb_dedicated_lu;
-        return 0;
-}
-
 static ssize_t manual_gc_store(struct device *dev,
 			struct device_attribute *attr,
 			const char *buf, size_t count)
